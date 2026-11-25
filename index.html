@@ -9,7 +9,7 @@
     :root {
       --ink: #22301f;
       --muted: #6d7a68;
-      --paper: #ffffff;
+      --paper: #f8f1e5;
       --soft: #f2f7f1;
       --blush: #fdf2f4;
       --card: #ffffff;
@@ -154,10 +154,27 @@
 
     /* Big brand hero, centered in the middle */
     .hero {
-      text-align: center;
-      padding: 2.5rem 1rem 2rem;
-      background: var(--blush);
-      border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  background: var(--blush);
+  border-radius: 20px;
+}
+
+/* Soft curved lines behind the brand name */
+.hero-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero > :not(svg) {
+  position: relative;
+  z-index: 1;
+}
+
     }
 
     .eyebrow {
@@ -380,11 +397,27 @@
     }
 
     /* Booking */
-    .booking {
-      padding: 1.25rem 1rem;
-      background: var(--blush);
-      border-radius: 20px;
-    }
+/* Booking: same soft lines as the header and contact */
+.booking {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 1rem;
+  background: var(--blush);
+  border-radius: 20px;
+}
+
+.booking-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.booking > :not(svg) {
+  position: relative;
+  z-index: 1;
+}
+
 
     .booking label {
       display: block;
@@ -497,13 +530,28 @@
     }
 
     /* Contact */
-    .contact {
-      padding: 1rem;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      text-align: center;
-    }
+/* Contact: same soft pink design as the header */
+.contact {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 1rem;
+  background: var(--blush);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.contact-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contact > :not(svg) {
+  position: relative;
+  z-index: 1;
+}
+
 
     .contact p {
       margin: 0.25rem 0;
@@ -549,6 +597,15 @@
     <!-- PAGE 1: Welcome. Brand and Our Work. -->
     <div class="view active" id="view-home">
       <div class="hero">
+        <svg class="hero-waves" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-10 132 C 70 92, 130 162, 210 118 S 350 58, 410 96" fill="none" stroke="#bcd7f0" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M322 34 C 345 18, 368 34, 360 50 C 354 62, 334 60, 333 48 C 332 39, 342 34, 348 39" fill="none" stroke="#bfe3c6" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+            <path d="M-6 186 C 45 162, 92 172, 128 196" fill="none" stroke="#f6e3ac" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M18 34 C 34 22, 52 36, 70 28" fill="none" stroke="#bfe3c6" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+            <circle cx="238" cy="160" r="9" fill="none" stroke="#f6e3ac" stroke-width="5" opacity="0.55"/>
+          </svg>
+          
+          
         <p class="eyebrow">Nail Studio</p>
         <h1>Nails <span>By Isa</span></h1>
         <p class="tagline">Fresh nails, made with care.</p>
@@ -602,6 +659,14 @@
       <p class="section-note">Pick a date, choose an open time, and you are booked. No waiting for a reply.</p>
 
       <form class="booking" id="booking-form">
+        <svg class="booking-waves" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-10 96 C 70 60, 140 130, 220 92 S 360 130, 410 84" fill="none" stroke="#bcd7f0" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M30 26 C 48 14, 64 28, 56 40 C 50 48, 36 46, 35 37 C 34 29, 44 26, 48 31" fill="none" stroke="#bfe3c6" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+            <path d="M286 182 C 330 164, 372 172, 406 190" fill="none" stroke="#f6e3ac" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M318 44 C 334 34, 350 46, 366 40" fill="none" stroke="#bfe3c6" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+            <circle cx="70" cy="168" r="8" fill="none" stroke="#f6e3ac" stroke-width="5" opacity="0.55"/>
+          </svg>
+          
         <label for="date">1. Pick a date</label>
         <input id="date" name="date" type="date" required>
 
@@ -629,6 +694,14 @@
 
     <h2>Contact</h2>
     <div class="contact">
+        <svg class="contact-waves" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-10 70 C 80 110, 150 40, 240 84 S 370 120, 410 76" fill="none" stroke="#bcd7f0" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M352 150 C 372 138, 388 152, 380 164 C 374 172, 358 170, 358 160 C 358 152, 368 150, 372 155" fill="none" stroke="#bfe3c6" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+            <path d="M-6 26 C 40 44, 84 40, 118 18" fill="none" stroke="#f6e3ac" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M250 30 C 266 20, 282 32, 298 26" fill="none" stroke="#bfe3c6" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+            <circle cx="150" cy="150" r="8" fill="none" stroke="#f6e3ac" stroke-width="5" opacity="0.55"/>
+          </svg>
+          
       <p>18 Tappan St, Kearny, NJ 07032</p>
       <p>Phone: <a href="tel:+16467090652">(646) 709-0652</a></p>
       <p>Instagram: <a href="https://www.instagram.com/nailss._.by._.isaa/" target="_blank">@nailss._.by._.isaa</a></p>
